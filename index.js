@@ -14,6 +14,7 @@ function getTimesPrayer (city, country){
     )
     .then((response) => {
       const dates = response.data.data;
+      console.log(dates)
       const hijriDate = dates[dateByDay].date.hijri;
       const gregorianDate = dates[dateByDay].date.gregorian;
       const hijri =
