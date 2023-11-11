@@ -1,3 +1,4 @@
+console.log("connected")
 function getTimesPrayer (city, country){
   // get the dates
   const date = new Date()
