@@ -96,3 +96,5 @@ function searchTimesOfTheCity (){
   const input = document.querySelector(".search-input");
   getTimesPrayer(input.value);
 }
+
+console.log("loaded")
