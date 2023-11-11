@@ -94,6 +94,7 @@ search.addEventListener("click", searchTimesOfTheCity)
 
 function searchTimesOfTheCity (){
   const input = document.querySelector(".search-input");
+  console.log(input.value)  
   getTimesPrayer(input.value);
 }
 
