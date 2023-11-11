@@ -1,4 +1,5 @@
 console.log("connected")
+document.querySelector("body").style.backgroundColor = 'red'
 // function getTimesPrayer (city, country){
 //   // get the dates
 //   const date = new Date()
