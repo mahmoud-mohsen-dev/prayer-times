@@ -102,5 +102,5 @@ function searchTimesOfTheCity (){
   console.log(input.value)  
   getTimesPrayer(input.value);
 }
-
-console.log("loaded")
+getTimesPrayer("cairo", "Egypt")
+// console.log("loaded")
