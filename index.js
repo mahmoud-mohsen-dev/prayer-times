@@ -4,7 +4,7 @@ function getTimesPrayer (city, country){
   const dateByYear = date.getFullYear()
   const dateByMonth = date.getMonth();
   const dateByDay = date.getDate() - 1
-
+  console.log('begining of axios')
   // Reques the data from the api
   axios
     .get(
