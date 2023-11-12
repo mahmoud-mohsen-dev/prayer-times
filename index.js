@@ -16,39 +16,40 @@ function getTimesPrayer (city, country){
       }?city=${city}&country=${country}&method=2`
     )
     .then((response) => {
-      const dates = response.data.data;
-      console.log(dates)
-      const hijriDate = dates[dateByDay].date.hijri;
-      const gregorianDate = dates[dateByDay].date.gregorian;
-      const hijri =
-        hijriDate.weekday.ar +
-        " " +
-        hijriDate.day +
-        " " +
-        hijriDate.month.ar +
-        " " +
-        hijriDate.year; 
+      console.log(response)
+      // const dates = response.data.data;
+      // console.log(dates)
+      // const hijriDate = dates[dateByDay].date.hijri;
+      // const gregorianDate = dates[dateByDay].date.gregorian;
+      // const hijri =
+      //   hijriDate.weekday.ar +
+      //   " " +
+      //   hijriDate.day +
+      //   " " +
+      //   hijriDate.month.ar +
+      //   " " +
+      //   hijriDate.year; 
 
 
-      const gregorian =
-        gregorianDate.weekday.en +
-        " " +
-        gregorianDate.day +
-        " " +
-        gregorianDate.month.en +
-        " " +
-        gregorianDate.year; 
-      let { Sunrise, Fajr, Dhuhr, Asr, Maghrib, Isha } = dates[dateByDay].timings;
+      // const gregorian =
+      //   gregorianDate.weekday.en +
+      //   " " +
+      //   gregorianDate.day +
+      //   " " +
+      //   gregorianDate.month.en +
+      //   " " +
+      //   gregorianDate.year; 
+      // let { Sunrise, Fajr, Dhuhr, Asr, Maghrib, Isha } = dates[dateByDay].timings;
 
 
-      Sunrise = Sunrise.split(" ")[0];
-      Fajr = Fajr.split(" ")[0];
-      Dhuhr = Dhuhr.split(" ")[0];
-      Asr = Asr.split(" ")[0];
-      Maghrib = Maghrib.split(" ")[0];
-      Isha = Isha.split(" ")[0];
+      // Sunrise = Sunrise.split(" ")[0];
+      // Fajr = Fajr.split(" ")[0];
+      // Dhuhr = Dhuhr.split(" ")[0];
+      // Asr = Asr.split(" ")[0];
+      // Maghrib = Maghrib.split(" ")[0];
+      // Isha = Isha.split(" ")[0];
 
-      displayTimes(Sunrise, Fajr, Dhuhr, Asr, Maghrib, Isha,gregorian, hijri);
+      // displayTimes(Sunrise, Fajr, Dhuhr, Asr, Maghrib, Isha,gregorian, hijri);
     })
     .catch(error => console.log(error + ' @Getting Time Prayer Func'))
 }
