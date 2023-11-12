@@ -6,6 +6,9 @@ function getTimesPrayer (city, country){
   const dateByDay = date.getDate() - 1
   // console.log('begining of axios')
   // Reques the data from the api
+  console.log(`http://api.aladhan.com/v1/calendarByCity/${dateByYear}/${
+        dateByMonth + 1
+      }?city=${city}&country=${country}&method=2`)
   axios
     .get(
       `http://api.aladhan.com/v1/calendarByCity/${dateByYear}/${
