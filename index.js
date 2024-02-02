@@ -97,9 +97,15 @@ function displayTimes(
 }
 
 const search = document.querySelector(".search-logo");
-search.addEventListener("click", searchTimesOfTheCity);
 
 function searchTimesOfTheCity() {
     const input = document.querySelector(".search-input");
     getTimesPrayer(input.value);
+    console.log(input);
 }
+
+search.addEventListener("click", searchTimesOfTheCity);
+search.addEventListener("keydown", (event) => {
+    console.log(event);
+    // do something
+});
