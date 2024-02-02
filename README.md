@@ -6,7 +6,7 @@
 
 ## Try it Live!
 
-Check out the live app [Prayer Times]()
+Check out the live app [Prayer Times](https://mahmoud-mohsen-dev.github.io/prayer-times/)
 
 ## How to Use
 
@@ -26,7 +26,7 @@ Note click on search icon after entering city name. Enter button on the keyboard
 1. Clone this repository.
 
     ```bash
-    git clone
+    git clone https://github.com/mahmoud-mohsen-dev/prayer-times.git
     ```
 
 2. Navigate to the Project Directory:

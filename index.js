@@ -8,7 +8,7 @@ function getTimesPrayer(city, country) {
     // Request the data from the api
     axios
         .get(
-            `http://api.aladhan.com/v1/calendarByCity/${dateByYear}/${
+            `https://api.aladhan.com/v1/calendarByCity/${dateByYear}/${
                 dateByMonth + 1
             }?city=${city}&country=${country}&method=2`
         )
