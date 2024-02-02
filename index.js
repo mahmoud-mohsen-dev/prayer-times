@@ -1,4 +1,4 @@
-function getTimesPrayer(city, country) {
+function getTimesPrayer(city) {
     // get the dates
     const date = new Date();
     const dateByYear = date.getFullYear();
@@ -10,7 +10,7 @@ function getTimesPrayer(city, country) {
         .get(
             `https://api.aladhan.com/v1/calendarByCity/${dateByYear}/${
                 dateByMonth + 1
-            }?city=${city}&country=${country}&method=2`
+            }?city=${city}&country=egypt&method=2`
         )
         .then((response) => {
             const dates = response.data.data;
@@ -105,7 +105,7 @@ function searchTimesOfTheCity() {
 }
 
 search.addEventListener("click", searchTimesOfTheCity);
-search.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", (event) => {
     console.log(event);
     // do something
 });
