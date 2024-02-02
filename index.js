@@ -105,7 +105,3 @@ function searchTimesOfTheCity() {
 }
 
 search.addEventListener("click", searchTimesOfTheCity);
-document.addEventListener("keydown", (event) => {
-    console.log(event);
-    // do something
-});
