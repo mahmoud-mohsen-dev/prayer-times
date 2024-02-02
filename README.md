@@ -10,7 +10,7 @@ Check out the live app [Prayer Times](https://mahmoud-mohsen-dev.github.io/praye
 
 ## How to Use
 
-Search by city names Like `cairo`, `aswan`, `suiz` to get the current pray time for that city.
+Search by city names. Like `cairo`, 'aswan','suiz' to get the current prayer time for that city (works only with Egypt's cities).
 
 Note click on search icon after entering city name. Enter button on the keyboard won't work!
 
