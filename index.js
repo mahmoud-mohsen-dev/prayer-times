@@ -4,13 +4,8 @@ function getTimesPrayer(city, country) {
     const dateByYear = date.getFullYear();
     const dateByMonth = date.getMonth();
     const dateByDay = date.getDate() - 1;
-    // console.log('begining of axios')
-    // Reques the data from the api
-    console.log(
-        `http://api.aladhan.com/v1/calendarByCity/${dateByYear}/${
-            dateByMonth + 1
-        }?city=${city}&country=${country}&method=2`
-    );
+
+    // Request the data from the api
     axios
         .get(
             `http://api.aladhan.com/v1/calendarByCity/${dateByYear}/${
@@ -18,38 +13,46 @@ function getTimesPrayer(city, country) {
             }?city=${city}&country=${country}&method=2`
         )
         .then((response) => {
-            console.log(response);
-            // const dates = response.data.data;
-            // console.log(dates)
-            // const hijriDate = dates[dateByDay].date.hijri;
-            // const gregorianDate = dates[dateByDay].date.gregorian;
-            // const hijri =
-            //   hijriDate.weekday.ar +
-            //   " " +
-            //   hijriDate.day +
-            //   " " +
-            //   hijriDate.month.ar +
-            //   " " +
-            //   hijriDate.year;
+            const dates = response.data.data;
+            const hijriDate = dates[dateByDay].date.hijri;
+            const gregorianDate = dates[dateByDay].date.gregorian;
+            const hijri =
+                hijriDate.weekday.ar +
+                " " +
+                hijriDate.day +
+                " " +
+                hijriDate.month.ar +
+                " " +
+                hijriDate.year;
 
-            // const gregorian =
-            //   gregorianDate.weekday.en +
-            //   " " +
-            //   gregorianDate.day +
-            //   " " +
-            //   gregorianDate.month.en +
-            //   " " +
-            //   gregorianDate.year;
-            // let { Sunrise, Fajr, Dhuhr, Asr, Maghrib, Isha } = dates[dateByDay].timings;
+            const gregorian =
+                gregorianDate.weekday.en +
+                " " +
+                gregorianDate.day +
+                " " +
+                gregorianDate.month.en +
+                " " +
+                gregorianDate.year;
+            let { Sunrise, Fajr, Dhuhr, Asr, Maghrib, Isha } =
+                dates[dateByDay].timings;
 
-            // Sunrise = Sunrise.split(" ")[0];
-            // Fajr = Fajr.split(" ")[0];
-            // Dhuhr = Dhuhr.split(" ")[0];
-            // Asr = Asr.split(" ")[0];
-            // Maghrib = Maghrib.split(" ")[0];
-            // Isha = Isha.split(" ")[0];
+            Sunrise = Sunrise.split(" ")[0];
+            Fajr = Fajr.split(" ")[0];
+            Dhuhr = Dhuhr.split(" ")[0];
+            Asr = Asr.split(" ")[0];
+            Maghrib = Maghrib.split(" ")[0];
+            Isha = Isha.split(" ")[0];
 
-            // displayTimes(Sunrise, Fajr, Dhuhr, Asr, Maghrib, Isha,gregorian, hijri);
+            displayTimes(
+                Sunrise,
+                Fajr,
+                Dhuhr,
+                Asr,
+                Maghrib,
+                Isha,
+                gregorian,
+                hijri
+            );
         })
         .catch((error) => console.log(error + " @Getting Time Prayer Func"));
 }
@@ -98,8 +101,5 @@ search.addEventListener("click", searchTimesOfTheCity);
 
 function searchTimesOfTheCity() {
     const input = document.querySelector(".search-input");
-    console.log(input.value);
     getTimesPrayer(input.value);
 }
-getTimesPrayer("cairo", "Egypt");
-// console.log("loaded")
